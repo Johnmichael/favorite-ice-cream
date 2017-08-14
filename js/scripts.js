@@ -1,7 +1,14 @@
 $(document).ready(function() {
-  var flavors = ["Mint", "Chocolate", "Vanilla", "Coffee", "Bubble Gum"];
+  $("form#blankFlavors").submit(function(event){
+    var flavors = ["iceCream1", "iceCream2", "iceCream3"];
 
   flavors.forEach(function(flavor) {
-    $("#icecream").append("<li>" + flavor + "</li>");
+    var userInput = $("input#" + flavor).val();
+
+    $("#result").append("<li>" + userInput + "</li>");
+    console.log(flavor);
+  });
+
+  event.preventDefault();
   });
 });
